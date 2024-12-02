@@ -18,25 +18,26 @@ document.addEventListener("DOMContentLoaded", function() {
    
   });
 });
-
+new WOW().init();
 const teamsection = document.querySelector(".team-section");
 const teamcontainer = document.querySelector(".team-container");
 
 let carddetails = [
     { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/jay sir.jpg" },
-    { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/Arpan.jpg" },
-    { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/nirvik.jpeg" },
-    { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/sujoy.jpeg" },
+    { name: "Arpan Das", role: "Software Dev", img: "/img/Arpan.jpg" },
+    { name: "Nirvik Roy", role: "Software Dev", img: "/img/nirvik.jpeg" },
+    { name: "Sujoy Ghosh", role: "Software Dev", img: "/img/sujoy.jpeg" },
     { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/srijon.jpeg" },
-    { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/Anik.jpeg" },
+    { name: "Anik Das", role: "Software Dev", img: "/img/Anik.jpeg" },
 ];
 
 // Clear the container once before adding cards
 function generateTeamCards() {
     teamcontainer.innerHTML = ""; // Clear existing content
-    carddetails.forEach((member) => {
+    carddetails.forEach((member, index) => {
         const teamdiv = document.createElement("div");
-        teamdiv.classList.add("team");
+        teamdiv.classList.add("team", "wow", "fadeInUp");
+        teamdiv.style.animationDelay = `${index * 0.2}s`; // Add delay for staggered animation
 
         const teammem = document.createElement("div");
         teammem.classList.add("team-member");
@@ -54,6 +55,10 @@ function generateTeamCards() {
         teamcontainer.appendChild(teamdiv);
     });
 }
+
+// Call the function to generate team cards
+// generateTeamCards();
+
 document.addEventListener("DOMContentLoaded",generateTeamCards)
 
 // count js
