@@ -1,6 +1,15 @@
 
 /*** Spinner Start ***/
 /*** Spinner ***/
+#text {
+    line-height: 1.5; /* Adjust as needed */
+    height: 1em;      /* or a fixed value */
+    display: inline-block; /* Prevent height fluctuations */
+  }
+  #together{
+  font-size: 3.5rem;
+  }
+  
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -521,7 +530,7 @@
 }
 
 .hero-header {
-    padding-top: 160px;
+    padding-top: 90px;
     padding-bottom: 100px;
     position: relative;
 }
@@ -624,6 +633,9 @@
 
     .hero-header .rotate-img img {
         margin-top: 100px;
+    }
+    .hero-header{
+        padding-top: 150px;
     }
    
 }
@@ -1131,3 +1143,32 @@ h1{
   .bold{
     font-weight: 700;
   }
+  .svg-3d-effect {
+    /* Ensure smooth scaling */
+    /* width: 100%; */
+    height: auto;
+
+    /* Apply 3D rotation */
+    transform: perspective(1000px) rotateX(10deg) rotateY(15deg);
+    
+    /* Add subtle shadow for depth */
+    /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2); */
+
+    /* Add a slight border glow effect */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(0px 5px 15px rgba(255, 255, 255, 0.15));
+
+    /* Smooth hover transitions */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.svg-3d-effect:hover {
+    /* Enhance the 3D effect on hover */
+    transform: perspective(1000px) rotateX(20deg) rotateY(25deg) scale(1.05);
+
+    /* Deepen the shadow for more intensity */
+    /* box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5), 0px 10px 10px rgba(0, 0, 0, 0.3); */
+
+    /* Glow effect intensifies */
+    filter: drop-shadow(0px 10px 20px rgba(255, 255, 255, 0.3));
+}

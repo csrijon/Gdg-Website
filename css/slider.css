@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+/* THE BASICS */
+/* html, body {
+  color: white;
+  background-color: rgb(30, 30, 35);
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+} */
+/* 
+html h1, body h1 {
+  margin-top: 50px;
+  margin-bottom: 0;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+html h2, body h2 {
+  margin: 0;
+  opacity: 0.4;
+} */
+
+.line {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CAROUSEL WRAPPER */
+.carousel-wrapper {
+  display: flex;
+  position: relative;
+  max-width: 600px;
+  margin: 50px;
+}
+
+.carousel-wrapper input {
+  display: none;
+}
+
+/* CAROUSEL / SLIDER */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.carousel ul {
+  display: flex;
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: calc(100% * 5);
+  transition: left 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.carousel li {
+  width: 100%;
+}
+
+.carousel li img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* NAVIGATION DOTS */
+.nav-dot {
+  position: absolute;
+  cursor: pointer;
+  margin-left: -7.5px;
+  bottom: -22.5px;
+  width: 15px;
+  height: 15px;
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.nav-dot:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
+.nav-dot:active {
+  transform: scale(0.9);
+}
+
+/* Adjust dot positions and active states for each slide */
+.nav-dot[for="slide1"] { left: calc(50% - 10%); }
+.nav-dot[for="slide2"] { left: calc(50% - 5%); }
+.nav-dot[for="slide3"] { left: calc(50%); }
+.nav-dot[for="slide4"] { left: calc(50% + 5%); }
+.nav-dot[for="slide5"] { left: calc(50% + 10%); }
+
+#slide1:checked ~ .carousel ul { left: 0%; }
+#slide2:checked ~ .carousel ul { left: -100%; }
+#slide3:checked ~ .carousel ul { left: -200%; }
+#slide4:checked ~ .carousel ul { left: -300%; }
+#slide5:checked ~ .carousel ul { left: -400%; }
+
+#slide1:checked ~ .nav-dot[for="slide1"],
+#slide2:checked ~ .nav-dot[for="slide2"],
+#slide3:checked ~ .nav-dot[for="slide3"],
+#slide4:checked ~ .nav-dot[for="slide4"],
+#slide5:checked ~ .nav-dot[for="slide5"] {
+  opacity: 1;
+}
+
+/* ARROWS */
+.left-arrow,
+.right-arrow {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  font-weight: bolder;
+  text-shadow: 0 0 7.5px rgba(0, 0, 0, 0.7);
+  top: 50%;
+  z-index: 1;
+  opacity: 0.7;
+  height: 50px;
+  font-size: 50px;
+  margin-top: -25px;
+  transition: 0.2s;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.left-arrow:active,
+.right-arrow:active {
+  transform: scale(0.9);
+}
+
+.left-arrow {
+  left: 15px;
+}
+
+.right-arrow {
+  right: 15px;
+}
+
+/* Arrow visibility based on checked slide */
+#slide1:checked ~ .left-arrow[for="slide5"],
+#slide1:checked ~ .right-arrow[for="slide2"],
+#slide2:checked ~ .left-arrow[for="slide1"],
+#slide2:checked ~ .right-arrow[for="slide3"],
+#slide3:checked ~ .left-arrow[for="slide2"],
+#slide3:checked ~ .right-arrow[for="slide4"],
+#slide4:checked ~ .left-arrow[for="slide3"],
+#slide4:checked ~ .right-arrow[for="slide5"],
+#slide5:checked ~ .left-arrow[for="slide4"],
+#slide5:checked ~ .right-arrow[for="slide1"] {
+  display: block;
+}
+
+/* SIGNATURE */
+.signature {
+  margin-top: 100px;
+  bottom: 0;
+  font-family: "Quicksand";
+  color: rgba(150, 150, 170);
+  text-shadow: 0 2.5px rgba(0, 0, 0, 0.25);
+}
+
+.signature .name {
+  color: white;
+}
+
+.signature .dot {
+  margin: 0 5px;
+}
+
+.signature a {
+  color: white;
+  text-decoration: underline;
+}

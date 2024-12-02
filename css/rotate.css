@@ -1,0 +1,51 @@
+.cube-loader .cube-wrapper .cube-span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
+  }
+  
+  .cube-span[data-color="blue"] {
+    background: linear-gradient(
+      to bottom,
+      #4285f4,
+      #4285f4 50%,
+      #1a73e8 100%
+    );
+  }
+  
+  .cube-span[data-color="red"] {
+    background: linear-gradient(
+      to bottom,
+      #ea4335,
+      #ea4335 50%,
+      #d93025 100%
+    );
+  }
+  
+  .cube-span[data-color="yellow"] {
+    background: linear-gradient(
+      to bottom,
+      #fbbc05,
+      #fbbc05 50%,
+      #f9ab00 100%
+    );
+  }
+  
+  .cube-span[data-color="green"] {
+    background: linear-gradient(
+      to bottom,
+      #34a853,
+      #34a853 50%,
+      #0f9d58 100%
+    );
+  }
+  
+  .cube-top {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: #3c4043; /* Neutral dark gray for the cube top */
+    transform: rotateX(90deg) translateZ(37.5px);
+  }
+  
