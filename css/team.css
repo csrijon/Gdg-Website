@@ -71,38 +71,104 @@
   transform: translateX(-50%);
   width: 150px;
   height: auto;
-  background-color: rgba(190, 185, 185, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
   pointer-events: none; /* Prevent interaction when hidden */
-  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; 
   color: #fff;
   z-index: 1;
   border-radius: 10px;
   padding: 10px;
-  /* background-color: #ff0000; */
-  
-  /* Initial box-shadow for lighting effect */
-  box-shadow: 0px 4px 10px rgba(5, 7, 9, 0.5);
-
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853); 
+  animation: gradient-shift 4s ease-in-out infinite; /* Gradient shift animation */
+  background-size: 200% 200%;
 }
 
+/* Glow effect using GDSC colors */
+.team-info::before,
+.team-info::after {
+  --size: 5px; /* Glow size */
+  content: "";
+  position: absolute;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: calc(100% + var(--size));
+  height: calc(100% + var(--size));
+  background: radial-gradient(circle at 0 0, #4285F4, transparent),
+    radial-gradient(circle at 100% 0, #EA4335, transparent),
+    radial-gradient(circle at 0 100%, #FBBC05, transparent),
+    radial-gradient(circle at 100% 100%, #34A853, transparent);
+}
+
+.team-info::after {
+  --size: 2px; /* Inner glow size */
+  z-index: -1;
+}
+
+.team-info::before {
+  --size: 10px; /* Outer glow size */
+  z-index: -2;
+  filter: blur(2vmin); /* Blur for glowing effect */
+  animation: blur-animation 3s ease-in-out alternate infinite; /* Blur animation */
+}
+
+/* Heartbeat animation with GDSC colors */
+@keyframes heartbeat {
+  0% {
+    box-shadow: 0 0 10px #4285F4, 0 0 20px #4285F4; /* Google Blue */
+    transform: scale(1);
+  }
+  30% {
+    box-shadow: 0 0 20px #EA4335, 0 0 30px #EA4335; /* Google Red */
+    transform: scale(1.1);
+  }
+  60% {
+    box-shadow: 0 0 20px #FBBC05, 0 0 30px #FBBC05; /* Google Yellow */
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 20px #34A853, 0 0 30px #34A853; /* Google Green */
+    transform: scale(1);
+  }
+}
+
+/* Dynamic gradient shift animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dynamic blur animation */
+@keyframes blur-animation {
+  to {
+    filter: blur(3vmin);
+    transform: scale(1.05);
+  }
+}
 
 
 .team-info h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
+  color: black;
 }
 
 .team-info p {
   margin: 5px 0 0;
   font-size: 0.85rem;
   font-style: italic;
-  color: #ccc;
+  color:black;
 }
 
 .team:hover .team-info {

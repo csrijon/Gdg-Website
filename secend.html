@@ -5,46 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vertical Timeline</title>
     <link rel="stylesheet" href="/css/secend.css">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 </head>
 <body>
-    <h1 class="heading">GDSC Timeline</h1>
+    
+    <h1 class="heading">GDG Timeline</h1>
     <div class="timeline">
         <!-- Left container -->
-        <div class="container left-container">
+        <div class="container left-container wow fadeInLeft" id="leftfirst" >
             <img src="./img/gdgLogo.png" id="circle-image" />           
             <img src="./img/GDGclass.jpeg" alt="Team 2024">
-            <div class="content">
+            <div class="content ">
                 <h2>Team 2024</h2>
                 <small>2024 - 2025</small>
                 <p>Our latest team, driving innovation and growth.</p>
-                <a href="/main.html" class="button">View Team</a>
+                <button class="shadow__btn">
+                    <a href="/main.html" class="button">View Team</a>
+                </button>
             </div>
         </div>
 
         <!-- Right container -->
-        <div class="container right-container">
+        <div class="container right-container wow fadeInRight" id="rightsec" >
             <img src="./img/gdgLogo.png" id="circle-image" />         
             <img src="./img/team23.jpeg" alt="Team 2023">   
-            <div class="content">
+            <div class="content wow backInRight">
                 <h2>Team 2023</h2>
                 <small>2023 - 2024</small>
                 <p>A year of challenges overcome and milestones achieved.</p>
-                <a href="https://gdg.community.dev/gdg-on-campus-maulana-abul-kalam-azad-university-of-technology-kalyani-india/" class="button">View Team</a>
-            </div>
+                <button class="shadow__btn">
+                    <a href="/main.html" class="button">View Team</a>
+                </button>
+        </div>
         </div>
 
         <!-- Left container -->
-        <div class="container left-container">
+        <div class="container left-container wow fadeInLeft" id="lastleft" >
             <img src="./img/gdgLogo.png" id="circle-image" />
             <img src="./img/team22.jpeg" alt="Team 2022">
-            <div class="content">
+            <div class="content wow backInLeft">
                 <h2>Team 2022</h2>
                 <small>2022 - 2023</small>
                 <p>Where our journey began, setting the foundation for success.</p>
+                <button class="shadow__btn" >
                 <a href="https://www.linkedin.com/company/dscmakaut/posts/?feedView=all" class="button">View Team</a>
+            </button>  
             </div>
         </div>
     </div>
-    <!-- <script src="/js/team."></script> -->
+
+    <script>
+        new WOW().init(); // Initialize WOW.js
+    </script>
 </body>
 </html>

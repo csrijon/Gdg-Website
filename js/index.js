@@ -29,6 +29,8 @@ let carddetails = [
     { name: "Sujoy Ghosh", role: "Software Dev", img: "/img/sujoy.jpeg" },
     { name: "Srijon Chowdhury", role: "Software Dev", img: "/img/srijon.jpeg" },
     { name: "Anik Das", role: "Software Dev", img: "/img/Anik.jpeg" },
+    { name: "Anik Das", role: "Software Dev", img: "/img/Anik.jpeg" },
+    
 ];
 
 // Clear the container once before adding cards
@@ -116,4 +118,36 @@ function consoleText(words, id, colors) {
 }
 
 
+var canvas = document.getElementById('myCanvas');
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ canvas: canvas });
+        renderer.setSize(canvas.width, canvas.height);
 
+        // Load the SVG as a texture
+        var loader = new THREE.TextureLoader();
+        var texture = loader.load('/img/svgviewer-output.svg');  // Path to your SVG file
+        var material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        
+        // Create a plane geometry with the same aspect ratio as the SVG
+        var geometry = new THREE.PlaneGeometry(4, 6); // Adjust the size as needed
+        var plane = new THREE.Mesh(geometry, material);
+        scene.add(plane);
+
+        // Set the camera position
+        camera.position.z = 5;
+
+        // Animation loop
+        var animate = function() {
+            requestAnimationFrame(animate);
+
+            // Rotate the plane for 3D effect
+            plane.rotation.x += 0.01;
+            plane.rotation.y += 0.01;
+
+            // Render the scene
+            renderer.render(scene, camera);
+        };
+
+        // Start the animation
+        animate();

@@ -119,40 +119,38 @@ html h2, body h2 {
 }
 
 /* ARROWS */
-.left-arrow,
-.right-arrow {
-  display: none;
+/* General styling for the left and right arrows */
+label.left-arrow,
+label.right {
   position: absolute;
-  cursor: pointer;
-  font-weight: bolder;
-  text-shadow: 0 0 7.5px rgba(0, 0, 0, 0.7);
-  top: 50%;
-  z-index: 1;
-  opacity: 0.7;
-  height: 50px;
-  font-size: 50px;
-  margin-top: -25px;
-  transition: 0.2s;
+  top: 50%; /* Vertically center the arrows */
+  transform: translateY(-50%); 
+  cursor: pointer; /* Make the cursor a pointer for better UX */
+  z-index: 10; /* Ensure the arrows appear above other elements */
 }
 
-.left-arrow:hover,
-.right-arrow:hover {
-  opacity: 1;
-  transform: scale(1.2);
+/* Specific position for the left arrow */
+label.left-arrow {
+  left: 10px; /* Adjust the horizontal position */
 }
 
-.left-arrow:active,
-.right-arrow:active {
-  transform: scale(0.9);
+/* Specific position for the right arrow */
+label.right {
+  right: 10px; /* Adjust the horizontal position */
 }
 
-.left-arrow {
-  left: 15px;
+/* Styling for the arrow images */
+label img {
+  width: 40px; /* Adjust the size of the arrow image */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.right-arrow {
-  right: 15px;
+/* Hover effect for a slight zoom-in */
+label img:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
 }
+
 
 /* Arrow visibility based on checked slide */
 #slide1:checked ~ .left-arrow[for="slide5"],

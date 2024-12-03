@@ -9,7 +9,9 @@
   #together{
   font-size: 3.5rem;
   }
-  
+  .threed{
+    width: 600px;
+  }
 #spinner {
     opacity: 0;
     visibility: hidden;
